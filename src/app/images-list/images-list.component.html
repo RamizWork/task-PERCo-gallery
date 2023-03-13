@@ -1,0 +1,8 @@
+<div class="images-wrapper" *ngIf="images$ | async as images">
+  <app-image *ngFor="let image of images"
+             [image]="image"
+             (toggleLike$)="toggleLike($event)"
+             (addComment$)="addComment(image.id, $event)"
+  >
+  </app-image>
+</div>

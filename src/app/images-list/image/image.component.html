@@ -1,0 +1,15 @@
+<div class="image-wrapper">
+  <img [src]="image.url" alt="image">
+  <div class="active-wrapper">
+    <img *ngIf="!image.isLike" (click)="toggleLike()" src="/assets/icons/like.svg" alt="like-icon">
+    <img *ngIf="image.isLike" (click)="toggleLike()" src="/assets/icons/like_active.svg" alt="like-active-icon">
+    <button class="button" (click)="showCommentComponent()">Add Comment</button>
+  </div>
+
+  <app-add-comment *ngIf="statusShow$ | async"
+                   (hideComponent)="hideComponent($event)"
+  >
+  </app-add-comment>
+
+  <app-comment *ngFor="let comment of image.comments" [comment]="comment"></app-comment>
+</div>
