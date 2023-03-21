@@ -16,13 +16,15 @@ export class ImageComponent implements OnInit {
 
   private commentService = inject(CommentService);
   statusShow$ = this.commentService.getShowStatusForComponent();
+  isShowImageModal: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
   toggleLike(): void {
-    this.toggleLike$.emit(this.image.id)
+    this.toggleLike$.emit(this.image.id);
   }
 
   showCommentComponent() {
@@ -32,5 +34,13 @@ export class ImageComponent implements OnInit {
   hideComponent(text: string) {
     this.commentService.hideComponent();
     this.addComment$.emit(text);
+  }
+
+  showImageModal() {
+    this.isShowImageModal = !this.isShowImageModal;
+  }
+
+  closeModal() {
+    this.isShowImageModal = false;
   }
 }

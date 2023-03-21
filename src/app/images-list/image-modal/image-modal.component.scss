@@ -1,0 +1,15 @@
+.container {
+  z-index: 100;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: #0000004f;
+  height: 100%;
+  width: 100%;
+
+  .image {
+    display: block;
+    margin: 80px auto;
+    border-radius: 12px;
+  }
+}
