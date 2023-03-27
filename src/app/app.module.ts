@@ -9,6 +9,8 @@ import {AddCommentComponent} from './images-list/image/add-comment/add-comment.c
 import {CommentComponent} from './images-list/image/comment/comment.component';
 import {ImageModalComponent} from './images-list/image-modal/image-modal.component';
 import {ClickOutsideDirective} from "./images-list/shared/directives/click-outside.directive";
+import { HeaderComponent } from './header/header.component';
+import {BasketServices} from "./shared/services/basket.services";
 
 @NgModule({
   declarations: [
@@ -18,13 +20,14 @@ import {ClickOutsideDirective} from "./images-list/shared/directives/click-outsi
     AddCommentComponent,
     CommentComponent,
     ImageModalComponent,
-    ClickOutsideDirective
+    ClickOutsideDirective,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [BasketServices],
   bootstrap: [AppComponent]
 })
 export class AppModule {

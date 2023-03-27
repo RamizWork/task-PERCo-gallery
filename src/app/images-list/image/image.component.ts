@@ -13,6 +13,7 @@ export class ImageComponent implements OnInit {
   @Input() image!: ImageInterface;
   @Output() toggleLike$ = new EventEmitter<number>();
   @Output() addComment$ = new EventEmitter();
+  @Output() addBasket$ = new EventEmitter<ImageInterface>();
 
   private commentService = inject(CommentService);
   statusShow$ = this.commentService.getShowStatusForComponent();
@@ -42,5 +43,9 @@ export class ImageComponent implements OnInit {
 
   closeModal() {
     this.isShowImageModal = false;
+  }
+
+  addBasket(image: ImageInterface) {
+    this.addBasket$.emit(image);
   }
 }

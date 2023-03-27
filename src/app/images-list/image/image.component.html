@@ -4,6 +4,7 @@
   <div class="active-wrapper">
     <img *ngIf="!image.isLike" (click)="toggleLike()" src="/assets/icons/like.svg" alt="like-icon">
     <img *ngIf="image.isLike" (click)="toggleLike()" src="/assets/icons/like_active.svg" alt="like-active-icon">
+    <img (click)="addBasket(image)" class="basket__icon" src="assets/icons/basket_black.svg" alt="basket-icon">
     <button class="button" (click)="showCommentComponent()">Add Comment</button>
   </div>
 

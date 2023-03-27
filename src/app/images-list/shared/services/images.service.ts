@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {images} from '../consts/images';
 import {ImageInterface} from '../interfaces/image.interface';
@@ -8,7 +8,9 @@ import {ImageInterface} from '../interfaces/image.interface';
 })
 export class ImagesService {
   private images$ = new BehaviorSubject<ImageInterface[]>(images);
-  constructor() { }
+
+  constructor() {
+  }
 
   getImages(): Observable<ImageInterface[]> {
     return this.images$.asObservable();
